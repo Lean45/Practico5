@@ -4,7 +4,7 @@ public class TicketSoporte {
     private int id;
     private String Descripcion;
     private Estado estado =  Estado.ABIERTO;
-    private Date fecha;
+    private Date fecha = new Date();
     private Usuario usuario;
 
     public TicketSoporte(int id, String descripcion) {
@@ -22,8 +22,10 @@ public class TicketSoporte {
     }
 
     public String mostrarDetalle(){
-        return "Id ticket: " + this.id + " \nDescripcion: " + this.Descripcion + " \nEstado: " + this.estado + " \nFecha: " + this.fecha;
+        return "Id ticket: " + this.id + " \nDescripcion: " + this.Descripcion + " \nEstado: " + this.estado + " \nFecha: " + this.fecha + " \nUsuario: " + (usuario != null ? usuario.toString() : "Sin usuario");
     }
 
-
+    public Estado getEstado() {
+        return estado;
+    }
 }
